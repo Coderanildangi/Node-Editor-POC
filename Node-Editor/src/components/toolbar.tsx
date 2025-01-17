@@ -1,8 +1,9 @@
 import React from "react";
-import "./Toolbar.css";
+import "../styles/toolbar.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
-import { incrementLayer, decrementLayer, setChildNodeCount } from "../redux/store";
+import { incrementLayer, decrementLayer, setChildNodeCount } from "../redux/slices/layerSlice";
+import DarkMode from "./darkmode";
 
 const Toolbar: React.FC = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const Toolbar: React.FC = () => {
           onChange={handleSliderChange}
         />
       </div>
+      <DarkMode />
     </div>
   );
 };

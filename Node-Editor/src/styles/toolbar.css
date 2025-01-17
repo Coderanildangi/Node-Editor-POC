@@ -2,7 +2,7 @@
     display: flex;
     gap: 10px;
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     border-bottom: 1px solid #ddd;
     position: fixed;
     top: 0;
@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
   }
+  
   
   .toolbar button {
     padding: 10px 15px;
@@ -37,4 +38,9 @@
   .slider-container input[type="range"] {
     width: 150px;
   }
+
+  [data-theme="dark"] .toolbar {
+    background-color: #000000; /* Black toolbar for dark mode */
+    color: #ffffff; /* White text for contrast */
+}
   

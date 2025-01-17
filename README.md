@@ -17,23 +17,17 @@ This POC implements a Node Editor using Rete.js with React. It provides a dynami
 1. **Clone the repository:**
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
-```
-
-2. **Go to POC:**
-
-```bash
+git clone https://github.com/Coderanildangi/Node-Editor-POC.git
 cd Node-Editor
 ```
 
-3. **Install dependencies:**
+2. **Install dependencies:**
 
 ```bash
 npm install
 ```
 
-4. **Start the development server:**
+3. **Start the development server:**
 
 ```bash
 npm run dev

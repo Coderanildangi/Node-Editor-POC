@@ -5,12 +5,12 @@ import { ConnectionPlugin, Presets as ConnectionPresets } from "rete-connection-
 import { ReactPlugin, Presets, ReactArea2D } from "rete-react-plugin";
 import { ConnectionPathPlugin } from "rete-connection-path-plugin";
 import { AutoArrangePlugin, Presets as ArrangePresets, ArrangeAppliers } from "rete-auto-arrange-plugin";
-import { ContextMenuExtra, ContextMenuPlugin, Presets as ContextMenuPresets, ContextMenuAreaExtra } from "rete-context-menu-plugin";
+import { ContextMenuExtra, ContextMenuPlugin, Presets as ContextMenuPresets } from "rete-context-menu-plugin";
 import { curveLinear } from "d3-shape";
 import store from "./redux/store";
 
 
-type AreaExtra = ReactArea2D<Schemes> & ContextMenuAreaExtra;
+type AreaExtra = ReactArea2D<Schemes>;
 
 class Connection extends ClassicPreset.Connection<
   ClassicPreset.Node,

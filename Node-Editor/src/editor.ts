@@ -8,6 +8,8 @@ import { AutoArrangePlugin, Presets as ArrangePresets, ArrangeAppliers } from "r
 import { ContextMenuExtra, ContextMenuPlugin, Presets as ContextMenuPresets } from "rete-context-menu-plugin";
 import { curveLinear } from "d3-shape";
 import store from "./redux/store";
+import { WindowSelection } from "./components/windowSelection";
+import { LassoSelection } from "./components/lassoSelection";
 
 
 type AreaExtra = ReactArea2D<Schemes>;
@@ -67,6 +69,10 @@ export async function createEditor(container: HTMLElement) {
   area.use(connection);
   area.use(render);
   area.use(arrange);
+
+  // Initialize selection tools
+  //const lassoSelection = new LassoSelection(editor, area);
+  const windowSelection = new WindowSelection(editor, area);
 
   await arrange.layout();
   AreaExtensions.zoomAt(area, editor.getNodes());
@@ -156,6 +162,8 @@ export async function createEditor(container: HTMLElement) {
 
   return {
     destroy: () => {
+      //lassoSelection.destroy();
+      //windowSelection.destroy();
       area.destroy();
       unsubscribe();
     },

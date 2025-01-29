@@ -23,7 +23,7 @@ const Toolbar: React.FC = () => {
       <button onClick={() => dispatch(decrementLayer())} disabled={layerCount === 0}>
         - Remove Layer
       </button>
-      <div className="slider-container">
+      {/* <div className="slider-container">
         <label htmlFor="child-slider">Child Nodes: {childNodeCount}</label>
         <input
           id="child-slider"
@@ -33,7 +33,7 @@ const Toolbar: React.FC = () => {
           value={childNodeCount}
           onChange={handleSliderChange}
         />
-      </div>
+      </div> */}
       <DarkMode />
     </div>
   );

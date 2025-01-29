@@ -54,13 +54,13 @@ export async function createEditor(container: HTMLElement) {
 
   //render.use(pathPlugin);
 
-  area.use(contextMenu);
+  area.use(contextMenu as any);
 
   AreaExtensions.selectableNodes(area, AreaExtensions.selector(), {
     accumulating: AreaExtensions.accumulateOnCtrl(),
   });
 
-  render.addPreset(Presets.contextMenu.setup());
+  render.addPreset(Presets.contextMenu.setup() as any);
   render.addPreset(Presets.classic.setup());
   connection.addPreset(ConnectionPresets.classic.setup());
   arrange.addPreset(ArrangePresets.classic.setup());
@@ -94,7 +94,7 @@ export async function createEditor(container: HTMLElement) {
     // Create root node
     const rootNode = new ClassicPreset.Node("Root Node");
     rootNode.addOutput("output", new ClassicPreset.Output(socket));
-    await editor.addNode(rootNode);
+    await editor.addNode(rootNode as any);
     await area.translate(rootNode.id, { x: 0, y: 0 });
     nodes.push(rootNode);
   
@@ -122,7 +122,7 @@ export async function createEditor(container: HTMLElement) {
           const childNode = new ClassicPreset.Node(`Layer ${layer + 1} - Child ${++childIndex}`);
           childNode.addInput("input", new ClassicPreset.Input(socket));
           childNode.addOutput("output", new ClassicPreset.Output(socket));
-          await editor.addNode(childNode);
+          await editor.addNode(childNode as any);
   
           await area.translate(childNode.id, { x: childX, y: childY });
   
